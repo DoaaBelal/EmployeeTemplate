@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.DAL", "..\Template.DAL\Template.DAL.csproj", "{D89ED9E5-47EC-4E32-8941-D84FDB4F1185}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.DAL", "Template.DAL\Template.DAL.csproj", "{D89ED9E5-47EC-4E32-8941-D84FDB4F1185}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.BL", "..\Template.BL\Template.BL.csproj", "{4DBA2764-EF82-47F7-A8D4-5E7D145F62AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.BL", "Template.BL\Template.BL.csproj", "{4DBA2764-EF82-47F7-A8D4-5E7D145F62AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.API", "..\Template.API\Template.API.csproj", "{A1EBBB20-AE4C-48C9-B16D-1E36F7300C47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.API", "Template.API\Template.API.csproj", "{A1EBBB20-AE4C-48C9-B16D-1E36F7300C47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

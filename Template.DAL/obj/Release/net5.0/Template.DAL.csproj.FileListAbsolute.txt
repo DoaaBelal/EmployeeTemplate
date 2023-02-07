@@ -1,0 +1,15 @@
+F:\Task 1\EmployeeTemplate\Template.DAL\bin\Release\net5.0\Template.DAL.deps.json
+F:\Task 1\EmployeeTemplate\Template.DAL\bin\Release\net5.0\Template.DAL.runtimeconfig.json
+F:\Task 1\EmployeeTemplate\Template.DAL\bin\Release\net5.0\Template.DAL.runtimeconfig.dev.json
+F:\Task 1\EmployeeTemplate\Template.DAL\bin\Release\net5.0\Template.DAL.dll
+F:\Task 1\EmployeeTemplate\Template.DAL\bin\Release\net5.0\ref\Template.DAL.dll
+F:\Task 1\EmployeeTemplate\Template.DAL\bin\Release\net5.0\Template.DAL.pdb
+F:\Task 1\EmployeeTemplate\Template.DAL\obj\Release\net5.0\Template.DAL.csproj.AssemblyReference.cache
+F:\Task 1\EmployeeTemplate\Template.DAL\obj\Release\net5.0\Template.DAL.GeneratedMSBuildEditorConfig.editorconfig
+F:\Task 1\EmployeeTemplate\Template.DAL\obj\Release\net5.0\Template.DAL.AssemblyInfoInputs.cache
+F:\Task 1\EmployeeTemplate\Template.DAL\obj\Release\net5.0\Template.DAL.AssemblyInfo.cs
+F:\Task 1\EmployeeTemplate\Template.DAL\obj\Release\net5.0\Template.DAL.csproj.CoreCompileInputs.cache
+F:\Task 1\EmployeeTemplate\Template.DAL\obj\Release\net5.0\Template.DAL.dll
+F:\Task 1\EmployeeTemplate\Template.DAL\obj\Release\net5.0\ref\Template.DAL.dll
+F:\Task 1\EmployeeTemplate\Template.DAL\obj\Release\net5.0\Template.DAL.pdb
+F:\Task 1\EmployeeTemplate\Template.DAL\obj\Release\net5.0\Template.DAL.genruntimeconfig.cache
