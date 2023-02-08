@@ -31,9 +31,8 @@ namespace Template.API.Controllers
 
         #region APIs
 
-        [HttpGet]
         [Route("~/API/Employee/GetEmployees")]
-
+        [HttpGet]
         public IActionResult GetEmployees()
         {
             try
@@ -50,24 +49,26 @@ namespace Template.API.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound(new ApiResponse<string>()
+                return BadRequest(new ApiResponse<string>()
                 {
-                    Code = "404",
-                    Status = "NotFound",
-                    Message = "Data Not Found",
+                    Code = "400",
+                    Status = "BadRequest",
+                    Message = "Error Occur when get data",
                     Response = ex.Message
                 });
             }
         }
 
-        [HttpGet]
         [Route("~/API/Employee/GetEmployeeById/{id}")]
-
-        public IActionResult GetEmployeeById(int id)
+        [HttpGet]
+        public IActionResult GetEmployeeById(int? id)
         {
             try
             {
-                var Data = employee.GetById(a => a.Id == id);
+                if (!id.HasValue)
+                    throw new Exception("Employee ID is required");
+
+                var Data = employee.GetById(a => a.Id == id.Value);
                 var model = mapper.Map<EmployeeVM>(Data);
                 return Ok(new ApiResponse<EmployeeVM>()
                 {
@@ -90,8 +91,8 @@ namespace Template.API.Controllers
             }
         }
 
-        [HttpPost]
         [Route("~/API/Employee/PostData")]
+        [HttpPost]
          public IActionResult PostData(EmployeeVM model)
          {
             try
@@ -101,7 +102,7 @@ namespace Template.API.Controllers
                     var Data = mapper.Map<Employee>(model);
                     var Result = employee.Create(Data);
                     return Ok(new ApiResponse<Employee>() {
-                        Code = "201",
+                        Code = "200",
                         Status = "Created",
                         Message = "Data Created",
                         Response = Result
@@ -128,8 +129,8 @@ namespace Template.API.Controllers
             }
         }
 
-        [HttpPut]
         [Route("~/API/Employee/PutData")]
+        [HttpPut]
         public IActionResult PutData(EmployeeVM model)
         {
             try
@@ -167,13 +168,15 @@ namespace Template.API.Controllers
             }
         }
 
-        [HttpDelete]
         [Route("~/API/Employee/DeleteData/{id}")]
-        public IActionResult DeleteData(int id)
+        [HttpDelete]
+        public IActionResult DeleteData(int? id)
         {
             try
             {
-                    var Result = employee.Delete(id);
+                if (!id.HasValue)
+                    throw new Exception("Employee ID is required");
+                    var Result = employee.Delete(id.Value);
                     return Ok(new ApiResponse<Employee>()
                     {
                         Code = "200",

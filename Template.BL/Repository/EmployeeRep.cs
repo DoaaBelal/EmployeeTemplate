@@ -13,7 +13,7 @@ namespace Template.BL.Repository
 {
     public class EmployeeRep : IEmployeeRep
     {
-        
+
         private readonly TemplateContext db;
 
         public EmployeeRep(TemplateContext db)
@@ -24,8 +24,8 @@ namespace Template.BL.Repository
 
         public IEnumerable<Employee> Get()
         {
-                var data = db.Employee.Select(a => a);
-                return data;
+            var data = db.Employee.ToList();
+            return data;
         }
 
         public Employee GetById(Expression<Func<Employee, bool>> filter = null)
@@ -37,24 +37,41 @@ namespace Template.BL.Repository
         public Employee Create(Employee model)
         {
             db.Employee.Add(model);
-            db.SaveChanges();
+            int action= db.SaveChanges();
+            if(action>0)
             return db.Employee.OrderBy(a => a.Id).LastOrDefault();
+
+            throw new Exception("ex.Message");
         }
 
         public Employee Update(Employee model)
         {
 
+            var entity = db.Employee.Find(model.Id);
+            db.Entry(entity).State = EntityState.Detached;
+            if (entity is null)
+                throw new Exception("Employee not found");
+            model.CreationDate = entity.CreationDate;
+
             db.Entry(model).State = EntityState.Modified;
-            db.SaveChanges();
-            return db.Employee.Where(a => a.Id == model.Id).FirstOrDefault();
+            int action = db.SaveChanges();
+            if (action > 0)
+                return model;
+            throw new Exception("ex.Message");
         }
 
         public Employee Delete(int id)
         {
             var OldData = db.Employee.Find(id);
+            if (OldData is null)
+                throw new Exception("Employee not found");
+
             db.Employee.Remove(OldData);
-            db.SaveChanges();
-            return OldData;
+            int action = db.SaveChanges();
+            if (action > 0)
+                return OldData;
+
+            throw new Exception("ex.Message");
         }
 
     }

@@ -14,8 +14,7 @@ namespace Template.BL.AutoMapper
         public DomainProfile()
         {
 
-            CreateMap<Employee, EmployeeVM>();
-            CreateMap<EmployeeVM, Employee>();
+            CreateMap<Employee, EmployeeVM>().ReverseMap();
 
         }
     }
